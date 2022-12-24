@@ -1,0 +1,27 @@
+<!-- ======= About Section ======= -->
+{% load static %}
+<section id="about" class="about">
+    <div class="container">
+          <div class="section-title" data-aos="zoom-out">
+            <h2>scan</h2>
+            <p>Upload your file here</p>
+          </div>
+  
+          <div class="row content text-center" data-aos="fade-up">
+            <div class="col-lg-12">
+              <p>
+                Please do not submit any personal information; Scanware is not responsible for the contents of your
+                submission.
+              </p>
+              <div class="text-center">
+                <img src="{% static 'core/img/thumbprint.png' %}" width="140" height="100">
+                <form action="{% url 'upload' %}" method="POST" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  <input type="file" name="fileupload" id="choosefile" hidden onchange="javascript:this.form.submit();"><br>
+                  <label for="choosefile" id="choose" class="btn-learn-more">Choose File</label><br>
+                  <input type="submit" value="Upload" id="upload" class="btn-learn-more" style="display:none;">
+                </form>
+              </div>
+            </div>
+    </div>
+  </section><!-- End About Section -->

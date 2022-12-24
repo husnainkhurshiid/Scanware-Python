@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+    <title>Scanware</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+  
+    <!-- Favicons -->
+    <link href="{% static 'core/img/sheild.png' %}" rel="icon">
+    <link href="{% static 'core/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+  
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet">
+  
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'core/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'core/vendor/aos/aos.css' %}" rel="stylesheet">
+    <link href="{% static 'core/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'core/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'core/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'core/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'core/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+    <link href="{% static 'core/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+    <link href="{% static 'core/css/style.css' %}" rel="stylesheet">
+
+  </head>
+<body>
+  <header id="header" class="fixed-top d-flex align-items-center ">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1><a href="/">Scan<span class="text-warning">ware</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="{% static 'core/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link active" href="{% url 'home' %}">Back to home</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+  <main id="main">
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Results</h2>
+          <ol>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li>result</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section class="inner-page">
+      <div class="container">
+        <p>
+          <div class='row'>
+            <div class='col-sm-2 text-left'>
+              {% if Status == 'no' %}
+              <img src="{% static 'core/img/noVirus.png' %}" alt="No Virus Found Image Not Loaded" width="150px" height="150px">
+              {% else %}
+              <img src="{% static 'core/img/virus.png' %}" alt="Virus Found Image Not Loaded" width="150px" height="150px">
+              {% endif %}
+            </div>
+           <div class='col-sm-8 m-2 p-3'>
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Uploaded File</th>
+                  <th scope="col">Legitimate Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row" >{{fileName}}</th>
+                  <td>
+                    {% if Status == 'no' %}
+                    No Threat Found
+                    {% else %}
+                    Threat Found
+                    {% endif %}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+          </div>
+          
+        </p>
+      </div>
+    </section>
+    {% include 'core/contact.html' %}
+  </main>
+  {% include 'core/footer.html' %}
+  <!-- Vendor JS Files -->
+  <script src="{% static 'core/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'core/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'core/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'core/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'core/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'core/vendor/php-email-form/validate.js' %}"></script>
+  <!-- Template Main JS File -->
+  <script src="{% static 'core/js/main.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+web: gunicorn Scanware.wsgi --log-file -
