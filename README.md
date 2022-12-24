@@ -2,7 +2,7 @@
 
 # Scanware
 
-Web application created in Django to dectect malicious file.
+Web application created in Django to detect malicious file.
 
 # Functions
 
