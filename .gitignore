@@ -1,2 +1,3 @@
-/__pycache__
-/media
+core/__pycache__
+*.sav
+*.rar
